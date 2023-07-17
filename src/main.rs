@@ -36,6 +36,7 @@ mod graphics {
         "║ s ┆ down {{left paddle}}     ║",
         "║ k ┆ up {{right paddle}}      ║",
         "║ j ┆ down {{right paddle}}    ║",
+        "║ g ┆ start game               ║",
         "╚═══╧══════════════════════════╝"
     ];
 
@@ -218,7 +219,7 @@ fn paddle_fondler(paddle_type: bool, direction: bool, self1: &mut Paddle, self2:
 }
 fn ball_fondler(self_b: &mut Ball, self1: &mut Paddle, self2: &mut Paddle) {
 
-    if self_b.x >= graphics::LENGTH_RIGHT as i32 - 1 || self_b.x <= graphics::LENGTH_LEFT as i32 + 1 {
+    if self_b.x >= graphics::LENGTH_RIGHT as i32 - 2 || self_b.x <= graphics::LENGTH_LEFT as i32 + 2 {
         if self_b.x >= graphics::LENGTH_RIGHT as i32 - 1 {
             unsafe{score_1 += 1}
         } else if self_b.x <= graphics::LENGTH_LEFT as i32 + 1 {
@@ -318,5 +319,5 @@ fn main() {
     init(&mut ball, &mut paddle1, &mut paddle2);
 }
 
-// Created the 28/6/2023 by Julian Woroszylski (Mamut) who holds the copyright therefore
+
 
